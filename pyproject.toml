@@ -22,7 +22,7 @@ keywords = [
     "tags",
 ]
 packages = [
-    {include = "venv/mkdocs_publisher"},
+    {include = "mkdocs_publisher"},
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -88,21 +88,21 @@ profile = "black"
 line_length = 99
 force_single_line = true
 src_paths = [
-    "venv/mkdocs_publisher",
+    "mkdocs_publisher",
     "tests",
 ]
 
 [tool.pyright]
 extraPaths = [
-    "venv/mkdocs_publisher",
+    "mkdocs_publisher",
 ]
 include = [
-    "venv/mkdocs_publisher",
+    "mkdocs_publisher",
     "tests",
 ]
 exclude = [
     "docs",
-    "venv/mkdocs_publisher_docs",
+    "mkdocs_publisher_docs",
 ]
 reportMissingImports = false
 reportMissingTypeStubs = false
@@ -110,7 +110,7 @@ reportOptionalMemberAccess = false
 typeCheckingMode = "basic"
 
 [tool.pytest.ini_options]
-addopts = "--tb=short --log-level=DEBUG --cov-report=html --cov=venv/mkdocs_publisher"
+addopts = "--tb=short --log-level=DEBUG --cov-report=html --cov=mkdocs_publisher"
 markers = [
     "deprecated: Tests no longer used",
     ]
@@ -135,12 +135,12 @@ skip_covered = false
 
 
 [tool.poetry.plugins."mkdocs.plugins"]
-pub-blog = "venv/mkdocs_publisher.blog.plugin:BlogPlugin"
-pub-debugger = "venv/mkdocs_publisher.debugger.plugin:DebuggerPlugin"
-pub-meta = "venv/mkdocs_publisher.meta.plugin:MetaPlugin"
-pub-minifier = "venv/mkdocs_publisher.minifier.plugin:MinifierPlugin"
-pub-obsidian = "venv/mkdocs_publisher.obsidian.plugin:ObsidianPlugin"
-pub-social = "venv/mkdocs_publisher.social.plugin:SocialPlugin"
+pub-blog = "mkdocs_publisher.blog.plugin:BlogPlugin"
+pub-debugger = "mkdocs_publisher.debugger.plugin:DebuggerPlugin"
+pub-meta = "mkdocs_publisher.meta.plugin:MetaPlugin"
+pub-minifier = "mkdocs_publisher.minifier.plugin:MinifierPlugin"
+pub-obsidian = "mkdocs_publisher.obsidian.plugin:ObsidianPlugin"
+pub-social = "mkdocs_publisher.social.plugin:SocialPlugin"
 
 [tool.poetry.scripts]
-mkdocs-pub = "venv/mkdocs_publisher._cli.publisher:app"
+mkdocs-pub = "mkdocs_publisher._cli.publisher:app"
