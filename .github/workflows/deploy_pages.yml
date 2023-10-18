@@ -46,9 +46,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: .pub_min_cache
-          key: pccm-kb-cache-${{ github.run_id }}
-          restore-keys: pccm-kb-cache-
-      - name: Build pccm-kb documentation
+          key: mkdocs-publisher-cache-${{ github.run_id }}
+          restore-keys: mkdocs-publisher-cache-
+      - name: Build mkdocs-publisher documentation
         run: poetry run mkdocs build -c
       - name: Store documentation build and debug logs as artifacts
         uses: actions/upload-artifact@v3
@@ -69,9 +69,9 @@ jobs:
           source-directory: docs
           destination-github-username: ${{ secrets.USER_NAME }}
           destination-repository-name: pccm-kb
-          target-branch: doc-pages
+          target-branch: docs
       - name: Save MkDocs files cache
         uses: actions/cache/save@v3
         with:
           path: .pub_min_cache
-          key: pccm-kb-cache-${{ github.run_id }}
+          key: mkdocs-publisher-cache-${{ github.run_id }}
